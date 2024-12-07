@@ -22,3 +22,10 @@ function StarRating(str) {
 
 console.log(StarRating("0.38"));
 console.log(StarRating("4.5"));
+
+function AlphabetSoup(str) {
+  return str.split("").sort().join("");
+}
+
+console.log(AlphabetSoup("coderbyte"));
+console.log(AlphabetSoup("hooplah"));
