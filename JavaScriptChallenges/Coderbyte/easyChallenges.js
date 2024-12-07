@@ -29,3 +29,28 @@ function AlphabetSoup(str) {
 
 console.log(AlphabetSoup("coderbyte"));
 console.log(AlphabetSoup("hooplah"));
+
+function CountingAnagrams(str) {
+  const words = str.split(" ");
+  let countAnagrams = 0;
+
+  for (let i = 0; i < words.length - 1; i++) {
+    const currentWord = words[i].split("").sort().join("");
+
+    for (let j = i + 1; j < words.length; j++) {
+      const nextWord = words[j].split("").sort().join("");
+
+      if (currentWord === nextWord && words[i] !== words[j]) {
+        countAnagrams++;
+        break;
+      }
+    }
+  }
+
+  return countAnagrams;
+}
+
+console.log(CountingAnagrams("aa aa odg dog gdo"));
+console.log(CountingAnagrams("a c b c run urn urn"));
+console.log(CountingAnagrams("dog cat tac"));
+console.log(CountingAnagrams("dog dog tac"));
